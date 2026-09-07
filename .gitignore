@@ -1,3 +1,7 @@
 _site/
 push.sh
 .DS_Store
+
+# 原始手机照片(含 GPS EXIF),不要提交
+*.HEIC
+*.heic
