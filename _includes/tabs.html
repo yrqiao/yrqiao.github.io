@@ -2,7 +2,7 @@
 // 页内标签切换：三个面板都在 DOM 里，按 URL hash 决定显示哪个，不刷新页面。
 // 用 hash 而不是纯 JS 状态，是为了让 前进/后退 和「复制链接发给别人」都还能用。
 (function () {
-  // hash -> 面板 id。不在表里的 hash（例如 #-news 这类首页内锚点）都落到首页面板。
+  // hash -> 面板 id。不在表里的 hash（#-news 这类首页内锚点）都落到首页面板。
   var ROUTES = {
     'experience': 'panel-experience',
     'awards-and-service': 'panel-awards'
@@ -12,9 +12,14 @@
     'panel-awards': 'Awards and Service'
   };
   var SITE_TITLE = {{ site.title | jsonify }};
+  var DEFAULT_HASH = 'about-me';
+
+  function hashOf(a) {
+    return decodeURIComponent((a.getAttribute('href') || '').split('#')[1] || '');
+  }
 
   function apply() {
-    var hash = decodeURIComponent(location.hash.replace(/^#/, ''));
+    var hash = decodeURIComponent(location.hash.replace(/^#/, '')) || DEFAULT_HASH;
     var target = ROUTES[hash] || 'panel-home';
 
     var panels = document.querySelectorAll('.tab-panel');
@@ -23,32 +28,58 @@
       p.hidden = (p.id !== target);
     });
 
-    // 高亮当前标签。菜单项里同一个面板可能对应多个链接
-    // （Homepage 和 About Me 都指向首页），所以全部比对。
+    // 按 hash 精确匹配，保证同时最多只亮一个。
+    // 不能按「所属面板」匹配 —— About Me / News / Publications 都属于首页面板，
+    // 那样会四个一起亮。Homepage 项和 About Me 指向同一个 hash，一并排除。
     Array.prototype.forEach.call(
-      document.querySelectorAll('.masthead__menu-item a'),
-      function (a) {
-        var h = (a.getAttribute('href') || '').split('#')[1] || '';
-        var panel = ROUTES[decodeURIComponent(h)] || 'panel-home';
-        a.parentNode.classList.toggle('is-active', panel === target);
+      document.querySelectorAll('.masthead__menu-item:not(.masthead__menu-home-item)'),
+      function (li) {
+        var a = li.querySelector('a');
+        li.classList.toggle('is-active', !!a && hashOf(a) === hash);
       }
     );
 
     document.title = SITE_TITLE + ' - ' + (TITLES[target] || 'Homepage');
 
-    // 首页面板内的锚点（#-news 等）照常滚动；切到其他面板则回到顶部。
-    if (target === 'panel-home' && hash) {
+    // 首页面板内的锚点照常滚动；切到其他面板、或落在默认位置时回到顶部。
+    if (target === 'panel-home' && hash !== DEFAULT_HASH) {
       var el = document.getElementById(hash);
       if (el) { el.scrollIntoView(); return; }
     }
     window.scrollTo(0, 0);
   }
 
+  function bind() {
+    var links = document.querySelectorAll('.masthead__menu-item a');
+
+    // main.min.js 里执行了 $("a").smoothScroll({offset:-20})，它对页面上真实存在
+    // 的锚点会 preventDefault 再自己滚动 —— hash 不会被写进 URL，hashchange 也就
+    // 不触发，高亮和面板都停在原地。先把导航链接从它手里解绑。
+    if (window.jQuery) {
+      window.jQuery(links).off('click.smoothscroll');
+    }
+
+    Array.prototype.forEach.call(links, function (a) {
+      a.addEventListener('click', function (e) {
+        var h = hashOf(a);
+        if (!h) return;
+        e.preventDefault();
+        if (decodeURIComponent(location.hash.replace(/^#/, '')) === h) {
+          apply();            // hash 没变就不会触发 hashchange，手动跑一次
+        } else {
+          location.hash = h;  // 触发 hashchange -> apply()，并留下一条历史记录
+        }
+      });
+    });
+
+    apply();
+  }
+
   window.addEventListener('hashchange', apply);
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', apply);
+    document.addEventListener('DOMContentLoaded', bind);
   } else {
-    apply();
+    bind();
   }
 })();
 </script>
