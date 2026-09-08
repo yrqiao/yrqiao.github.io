@@ -21,8 +21,14 @@ My research centers on **diffusion models** and **flow matching**, along with th
 
 
 # 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2026.08*: &nbsp;🎉 Our paper _NS-Copilot_ is accepted to **EMNLP 2026 Findings**!
+- *2026.06*: &nbsp;🎉 Our paper _DefenseSplat_ is accepted to **ECCV 2026**!
+- *2026.05*: &nbsp;🎉 Our paper _SAIF_ is accepted to **ECML PKDD 2026**!
+- *2026.04*: &nbsp;🎉 Our paper _YesBut-v2_ is accepted to **TPAMI**!
+- *2025.09*: &nbsp;🎉 Our paper _Segment then Splat_ is accepted to **Neurips 2025**!
+- *2024.12*: &nbsp;🎉 Our paper _GLEAN_ is accepted to **AAAI 2025** !
+- *2024.09*: &nbsp;🎉 Our paper _YesBut_ is accepted to **Neurips 2024 (Oral)**!
+
 
 # 📝 Publications 
 
