@@ -1,21 +1,23 @@
 # main links links
 #
-# 全部是同一页内的 hash —— _includes/tabs.html 监听 hashchange 切换面板，
-# 不会触发页面刷新。
-#   #about-me / #-news / #-publications  首页面板内的滚动锚点
-#   #experience / #awards-and-service    切换到对应面板
+# url    真实存在的页面路径。tabs.html 用 pushState 原地切换，地址栏只显示路径，
+#        不带任何 #。因为这些路径都有对应的 Jekyll 页面，直接访问和刷新也能用。
+# scroll 可选。指向首页面板内某个元素的 id，用于「切到首页再滚到该段」——
+#        滚动目标放在 data 属性里而不是 URL 片段里，地址栏才不会出现 #-news。
 main:
   - title: "About Me"
-    url: "/#about-me"
+    url: "/"
 
   - title: "News"
-    url: "/#-news"
+    url: "/"
+    scroll: "-news"
 
   - title: "Publications"
-    url: "/#-publications"
+    url: "/"
+    scroll: "-publications"
 
   - title: "Experience"
-    url: "/#experience"
+    url: "/experience/"
 
   - title: "Awards and Service"
-    url: "/#awards-and-service"
+    url: "/awards-and-service/"

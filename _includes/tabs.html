@@ -1,26 +1,35 @@
 <script>
-// 页内标签切换：三个面板都在 DOM 里，按 URL hash 决定显示哪个，不刷新页面。
-// 用 hash 而不是纯 JS 状态，是为了让 前进/后退 和「复制链接发给别人」都还能用。
+// 页内标签切换。三个面板在每个页面的 DOM 里都存在（见 _includes/panels.md），
+// 所以切换只是改 hidden 属性 + 用 pushState 换地址栏，不刷新、不请求。
+//
+// 用 pushState 而不是 location.hash，是为了让地址栏保持 https://yrqiao.github.io/
+// 和 /experience/ 这样的干净路径，不出现 #about-me、#-news 之类的片段。
+// 这些路径都有真实的 Jekyll 页面，所以直接访问、刷新、分享链接一样能用。
 (function () {
-  // hash -> 面板 id。不在表里的 hash（#-news 这类首页内锚点）都落到首页面板。
   var ROUTES = {
-    'experience': 'panel-experience',
-    'awards-and-service': 'panel-awards'
+    '/': 'panel-home',
+    '/experience/': 'panel-experience',
+    '/awards-and-service/': 'panel-awards'
   };
   var TITLES = {
     'panel-experience': 'Experience',
     'panel-awards': 'Awards and Service'
   };
   var SITE_TITLE = {{ site.title | jsonify }};
-  var DEFAULT_HASH = 'about-me';
 
-  function hashOf(a) {
-    return decodeURIComponent((a.getAttribute('href') || '').split('#')[1] || '');
+  // /experience 和 /experience/ 视为同一个路由；Jekyll 产出的是带尾斜杠的目录。
+  function normalize(path) {
+    if (!path) return '/';
+    return path.charAt(path.length - 1) === '/' ? path : path + '/';
   }
 
-  function apply() {
-    var hash = decodeURIComponent(location.hash.replace(/^#/, '')) || DEFAULT_HASH;
-    var target = ROUTES[hash] || 'panel-home';
+  function panelFor(path) {
+    return ROUTES[normalize(path)] || 'panel-home';
+  }
+
+  // scrollTo 只在切到首页面板、且指定了 data-scroll 时使用
+  function render(path, scrollTo, activeLink) {
+    var target = panelFor(path);
 
     var panels = document.querySelectorAll('.tab-panel');
     if (!panels.length) return;
@@ -28,54 +37,60 @@
       p.hidden = (p.id !== target);
     });
 
-    // 按 hash 精确匹配，保证同时最多只亮一个。
-    // 不能按「所属面板」匹配 —— About Me / News / Publications 都属于首页面板，
-    // 那样会四个一起亮。Homepage 项和 About Me 指向同一个 hash，一并排除。
-    Array.prototype.forEach.call(
-      document.querySelectorAll('.masthead__menu-item:not(.masthead__menu-home-item)'),
-      function (li) {
+    // 同时最多只亮一个。点击时直接用被点的那一项；
+    // 直接访问 / 刷新 / 前进后退时没有「被点的项」，就按路径回推第一个匹配的链接。
+    var items = document.querySelectorAll('.masthead__menu-item:not(.masthead__menu-home-item)');
+    var fallback = null;
+    if (!activeLink) {
+      Array.prototype.forEach.call(items, function (li) {
         var a = li.querySelector('a');
-        li.classList.toggle('is-active', !!a && hashOf(a) === hash);
-      }
-    );
+        if (!fallback && a && !a.getAttribute('data-scroll') &&
+            normalize(a.getAttribute('href')) === normalize(path)) {
+          fallback = li;
+        }
+      });
+    }
+    Array.prototype.forEach.call(items, function (li) {
+      li.classList.toggle('is-active', li === (activeLink || fallback));
+    });
 
     document.title = SITE_TITLE + ' - ' + (TITLES[target] || 'Homepage');
 
-    // 首页面板内的锚点照常滚动；切到其他面板、或落在默认位置时回到顶部。
-    if (target === 'panel-home' && hash !== DEFAULT_HASH) {
-      var el = document.getElementById(hash);
-      if (el) { el.scrollIntoView(); return; }
-    }
-    window.scrollTo(0, 0);
+    var el = scrollTo && target === 'panel-home' ? document.getElementById(scrollTo) : null;
+    if (el) { el.scrollIntoView(); } else { window.scrollTo(0, 0); }
   }
 
   function bind() {
     var links = document.querySelectorAll('.masthead__menu-item a');
 
-    // main.min.js 里执行了 $("a").smoothScroll({offset:-20})，它对页面上真实存在
-    // 的锚点会 preventDefault 再自己滚动 —— hash 不会被写进 URL，hashchange 也就
-    // 不触发，高亮和面板都停在原地。先把导航链接从它手里解绑。
-    if (window.jQuery) {
-      window.jQuery(links).off('click.smoothscroll');
-    }
+    // main.min.js 执行了 $("a").smoothScroll({offset:-20})，它会对锚点链接
+    // preventDefault 并自行滚动。这里的链接已经不带 # 了，理论上碰不到，
+    // 但解绑掉更保险，免得它抢在前面处理。
+    if (window.jQuery) { window.jQuery(links).off('click.smoothscroll'); }
 
     Array.prototype.forEach.call(links, function (a) {
       a.addEventListener('click', function (e) {
-        var h = hashOf(a);
-        if (!h) return;
+        var href = a.getAttribute('href') || '';
+        // 外链、新窗口、组合键点击一律交还浏览器默认行为
+        if (href.charAt(0) !== '/' || a.target || e.metaKey || e.ctrlKey ||
+            e.shiftKey || e.altKey || e.button !== 0) return;
         e.preventDefault();
-        if (decodeURIComponent(location.hash.replace(/^#/, '')) === h) {
-          apply();            // hash 没变就不会触发 hashchange，手动跑一次
-        } else {
-          location.hash = h;  // 触发 hashchange -> apply()，并留下一条历史记录
+        var scrollTo = a.getAttribute('data-scroll');
+        if (normalize(location.pathname) !== normalize(href)) {
+          history.pushState({}, '', href);
         }
+        render(href, scrollTo, a.parentNode);
       });
     });
 
-    apply();
+    render(location.pathname, null, null);
   }
 
-  window.addEventListener('hashchange', apply);
+  // 前进/后退：pushState 不会触发 popstate，用户点浏览器按钮才会。
+  window.addEventListener('popstate', function () {
+    render(location.pathname, null, null);
+  });
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', bind);
   } else {
