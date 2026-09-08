@@ -15,6 +15,6 @@
 
 <meta http-equiv="cleartype" content="on">
 
-<!-- 这里原本是 <head><base target="_blank"></head>：一个嵌套在 head 里的第二个
-     head（非法 HTML），外加一个把站内每一条链接都改成新标签页打开的 base。
-     导航靠 hash 切换面板，被弹到新标签后当前页什么都不会发生，所以移除。 -->
+<!-- 模板原本在这里嵌了第二个 head 元素，里面放着一个 target 为 _blank 的 base，
+     会把站内每一条链接都改成新标签页打开。导航靠 hash 切换面板，链接被弹到新
+     标签后当前页什么都不会发生，所以移除了，别再加回来。 -->
