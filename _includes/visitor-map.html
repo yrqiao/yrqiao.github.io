@@ -1,27 +1,16 @@
 <!--
-  页脚访客统计。两个独立的第三方服务，各管一件事：
+  页脚访客地图（MapMyVisitors）。
 
-  1. vercount（events.vercount.one）—— 累计访问次数。
-     免注册，按域名自动建账，数字从首次接入起永久累加，不做时间窗口截断。
-     脚本会把结果写进下面 id 为 vercount_value_site_pv / site_uv 的元素
-     （同时兼容 busuanzi_value_* 这套 id）。
-     取代不蒜子：后者官方端点已 404。
+  参数存在 _config.yml 的 mapmyvisitors_params，是「? 之后的整段查询串」
+  而不只是 d= 那个 token —— co / ct / cmo / cmn 是在它网站上选的配色，
+  只留 token 会全部丢失。留空则整块不渲染，不会留下一个坏掉的空框。
 
-  2. MapMyVisitors —— 访客地图。
-     参数存在 _config.yml 的 mapmyvisitors_params，是「? 之后的整段查询串」
-     而不只是 d= 那个 token —— co / ct / cmo / cmn 是在它网站上选的配色，
-     只留 token 会全部丢失。留空则整块不渲染，不会留下一个坏掉的空框。
-     注意其免费版地图打点有保留期，不是永久 —— 所以累计总数才交给 vercount，
-     没让它兼任。
+  挂件自带访问计数，所以这里不再另外显示一行数字。原先并排的那个计数器
+  （events.vercount.one，永久累计、不受时间窗口限制）已移除；要恢复的话
+  见本文件的历史版本：git log -p _includes/visitor-map.html
 -->
+{% if site.mapmyvisitors_params and site.mapmyvisitors_params != "" %}
 <div class="visitor-stats">
-  <p class="visitor-stats__counter">
-    Total visits <strong id="vercount_value_site_pv">–</strong>
-    &nbsp;·&nbsp;
-    Unique visitors <strong id="vercount_value_site_uv">–</strong>
-  </p>
-
-  {% if site.mapmyvisitors_params and site.mapmyvisitors_params != "" %}
   <div class="visitor-stats__map" id="mapmyvisitors-mount"></div>
   <script>
     (function () {
@@ -35,7 +24,5 @@
       mount.appendChild(s);
     })();
   </script>
-  {% endif %}
 </div>
-
-<script defer src="https://events.vercount.one/js"></script>
+{% endif %}
