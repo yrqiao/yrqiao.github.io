@@ -1,7 +1,10 @@
 # main links links
+#
+# 全部是同一页内的 hash —— _includes/tabs.html 监听 hashchange 切换面板，
+# 不会触发页面刷新。
+#   #about-me / #-news / #-publications  首页面板内的滚动锚点
+#   #experience / #awards-and-service    切换到对应面板
 main:
-  # 首页内的锚点。必须带前导 / ——
-  # 否则在 /experience/ 这类子页面上点击会在当前页找锚点，跳不回首页。
   - title: "About Me"
     url: "/#about-me"
 
@@ -11,9 +14,8 @@ main:
   - title: "Publications"
     url: "/#-publications"
 
-  # 独立页面
   - title: "Experience"
-    url: "/experience/"
+    url: "/#experience"
 
   - title: "Awards and Service"
-    url: "/awards-and-service/"
+    url: "/#awards-and-service"

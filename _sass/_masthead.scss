@@ -59,6 +59,20 @@
     padding-right: 2em;
     font-weight: 700;
   }
+
+  // 当前面板对应的标签。没有这个高亮，切换后就没有任何东西
+  // 提示「你在哪一栏」，读起来会像跳到了一个陌生页面。
+  &.is-active > a {
+    color: $link-color;
+    font-weight: 700;
+    box-shadow: inset 0 -2px 0 $link-color;
+  }
+}
+
+// 面板显隐由 JS 通过 hidden 属性控制。写成 !important 是因为
+// .tab-panel 若被其他规则赋了 display，hidden 的默认样式会被盖掉。
+.tab-panel[hidden] {
+  display: none !important;
 }
 
 

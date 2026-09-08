@@ -15,6 +15,14 @@ redirect_from:
 {% endif %}
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
+<!--
+三个面板都在这一页里，由 assets/js/tabs 按 URL hash 切换显示，不刷新页面。
+每个面板必须带 markdown="1"，否则 kramdown 会把 div 里的内容当成纯 HTML，
+Markdown 语法（标题、列表、链接）全部失效。
+-->
+
+<div id="panel-home" class="tab-panel" markdown="1">
+
 <span class='anchor' id='about-me'></span>
 
 I am **Yiran Qiao**, a PhD candidate in Computer Science at Case Western Reserve University, advised by [Prof. Jing Ma](https://jma712.github.io/). Prior to that, I received my M.S. from The Ohio State University and my B.S. in Electrical Engineering from Xi'an Jiaotong University.
@@ -41,3 +49,42 @@ My research centers on **diffusion models** and **flow matching**, along with th
 </div>
 
 - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
+
+</div>
+
+
+<div id="panel-experience" class="tab-panel" hidden markdown="1">
+
+# 💼 Experience
+
+<!--
+格式参考，删掉本注释后照着写：
+- *2024.05 - 2024.08*, **Research Intern**, Company / Lab, City. Worked on ___.
+-->
+
+# 📖 Education
+
+- **Case Western Reserve University** — Ph.D. in Computer Science, advised by [Prof. Jing Ma](https://jma712.github.io/)
+- **The Ohio State University** — M.S.
+- **Xi'an Jiaotong University** — B.S. in Electrical Engineering
+
+</div>
+
+
+<div id="panel-awards" class="tab-panel" hidden markdown="1">
+
+# 🎖 Awards
+
+<!--
+格式参考，删掉本注释后照着写：
+- *2025.03*, Award name, Granting body.
+-->
+
+# 🤝 Service
+
+<!--
+格式参考：
+**Reviewer**: NeurIPS 2025, ICML 2025, CVPR 2025
+-->
+
+</div>

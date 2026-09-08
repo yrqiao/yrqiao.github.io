@@ -1,0 +1,54 @@
+<script>
+// 页内标签切换：三个面板都在 DOM 里，按 URL hash 决定显示哪个，不刷新页面。
+// 用 hash 而不是纯 JS 状态，是为了让 前进/后退 和「复制链接发给别人」都还能用。
+(function () {
+  // hash -> 面板 id。不在表里的 hash（例如 #-news 这类首页内锚点）都落到首页面板。
+  var ROUTES = {
+    'experience': 'panel-experience',
+    'awards-and-service': 'panel-awards'
+  };
+  var TITLES = {
+    'panel-experience': 'Experience',
+    'panel-awards': 'Awards and Service'
+  };
+  var SITE_TITLE = {{ site.title | jsonify }};
+
+  function apply() {
+    var hash = decodeURIComponent(location.hash.replace(/^#/, ''));
+    var target = ROUTES[hash] || 'panel-home';
+
+    var panels = document.querySelectorAll('.tab-panel');
+    if (!panels.length) return;
+    Array.prototype.forEach.call(panels, function (p) {
+      p.hidden = (p.id !== target);
+    });
+
+    // 高亮当前标签。菜单项里同一个面板可能对应多个链接
+    // （Homepage 和 About Me 都指向首页），所以全部比对。
+    Array.prototype.forEach.call(
+      document.querySelectorAll('.masthead__menu-item a'),
+      function (a) {
+        var h = (a.getAttribute('href') || '').split('#')[1] || '';
+        var panel = ROUTES[decodeURIComponent(h)] || 'panel-home';
+        a.parentNode.classList.toggle('is-active', panel === target);
+      }
+    );
+
+    document.title = SITE_TITLE + ' - ' + (TITLES[target] || 'Homepage');
+
+    // 首页面板内的锚点（#-news 等）照常滚动；切到其他面板则回到顶部。
+    if (target === 'panel-home' && hash) {
+      var el = document.getElementById(hash);
+      if (el) { el.scrollIntoView(); return; }
+    }
+    window.scrollTo(0, 0);
+  }
+
+  window.addEventListener('hashchange', apply);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', apply);
+  } else {
+    apply();
+  }
+})();
+</script>
