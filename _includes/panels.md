@@ -37,10 +37,10 @@ My research centers on **diffusion models** and **flow matching**, along with th
 
 Certified Causal Defense with Generalizable Robustness
 
-**Kaiming He**, Xiangyu Zhang, Shaoqing Ren, Jian Sun
+**Yiran Qiao**, Yu Yin, Chen Chen, Jing Ma
 
 [**\[Paper\]**](https://arxiv.org/pdf/2408.15451)
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- Certified defenses guarantee robustness only on the distribution they were trained on. GLEAN learns causally invariant features behind an L-Lipschitz encoder, so the certified radius carries over to shifted domains.
 </div>
 </div>
 
