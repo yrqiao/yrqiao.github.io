@@ -65,6 +65,14 @@
     .paper-box-text{
         max-width: 100%;
         order: 1;
+
+        // 论文标题 = 这个块里的第一个段落。用 :first-of-type 而不是加 class，
+        // 新增条目时照常写一行标题即可，不用记得套标签。
+        // 标题原本是超链接，取消链接后就丢了字号和颜色上的层次，这里补回来。
+        > p:first-of-type {
+            font-size: $type-size-4;
+            color: $link-color;
+        }
     }
     
     @include breakpoint($medium) {

@@ -39,8 +39,8 @@ Certified Causal Defense with Generalizable Robustness
 
 **Yiran Qiao**, Yu Yin, Chen Chen, Jing Ma
 
-[**\[Paper\]**](https://arxiv.org/pdf/2408.15451)
-- Certified defenses guarantee robustness only on the distribution they were trained on. GLEAN learns causally invariant features behind an L-Lipschitz encoder, so the certified radius carries over to shifted domains.
+[**\[Paper\]**](https://arxiv.org/pdf/2408.15451) [**\[Code\]**](https://github.com/yrqiao/Glean/tree/main)
+- GLEAN learns causally invariant features behind an L-Lipschitz encoder, certifying a robustness radius that holds across shifted domains.
 </div>
 </div>
 
