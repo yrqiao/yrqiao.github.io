@@ -16,6 +16,11 @@ google_scholar_stats_use_cdn : true
 # google analytics
 google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
 
+# 访客地图。去 https://mapmyvisitors.com 注册并绑定 https://yrqiao.github.io，
+# 把它给的 map.js 链接里 d= 后面那串 token 填在这里。留空则不渲染地图，
+# 下方的累计访问计数（vercount）不受影响、照常工作。
+mapmyvisitors_id         :
+
 # SEO Related
 google_site_verification :  # get google_site_verification from https://search.google.com/search-console/about
 bing_site_verification   :  # get bing_site_verification from https://www.bing.com/webmasters/about

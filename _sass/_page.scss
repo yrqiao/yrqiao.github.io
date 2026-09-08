@@ -410,3 +410,39 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+
+/* ==========================================================================
+   页脚访客统计（见 _includes/visitor-map.html）
+
+   放在 #main 之外，所以不受侧边栏那 2/12 栏的网格约束，
+   宽度对齐 #main 靠这里重复它的 container + padding。
+   ========================================================================== */
+
+.visitor-stats {
+  @include container;
+  padding: 2em 1em 3em;
+  text-align: center;
+  clear: both;
+
+  @include breakpoint($x-large) {
+    max-width: $x-large;
+  }
+}
+
+.visitor-stats__counter {
+  margin: 0 0 1em;
+  font-size: $type-size-6;
+  color: mix(#fff, $text-color, 35%);
+
+  strong {
+    color: $text-color;
+  }
+}
+
+/* 地图挂载点。第三方脚本注入的画布宽度不定，
+   限个上限免得在宽屏上撑得过大。 */
+.visitor-stats__map {
+  display: inline-block;
+  max-width: 320px;
+}
