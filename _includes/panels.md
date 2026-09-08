@@ -26,7 +26,7 @@ My research centers on **diffusion models** and **flow matching**, along with th
 - *2026.05*: &nbsp;🎉 Our paper _SAIF_ is accepted to **ECML PKDD 2026**!
 - *2026.04*: &nbsp;🎉 Our paper _YesBut-v2_ is accepted to **TPAMI**!
 - *2025.09*: &nbsp;🎉 Our paper _Segment then Splat_ is accepted to **Neurips 2025**!
-- *2024.12*: &nbsp;🎉 Our paper _GLEAN_ is accepted to **AAAI 2025** !
+- *2024.12*: &nbsp;🎉 Our paper _GLEAN_ is accepted to **AAAI 2025**!
 - *2024.09*: &nbsp;🎉 Our paper _YesBut_ is accepted to **Neurips 2024 (Oral)**!
 
 
