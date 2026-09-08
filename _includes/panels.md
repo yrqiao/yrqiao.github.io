@@ -32,6 +32,19 @@ My research centers on **diffusion models** and **flow matching**, along with th
 
 # 📝 Selected Publications 
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ECCV 2026</div><img src='images/eccv2026-poster.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+DefenseSplat: Enhancing the Robustness of 3D Gaussian Splatting via Frequency-Aware Filtering
+
+**Yiran Qiao**, Yiren Lu, Yunlai Zhou, Rui Yang, Linlin Hou, Yu Yin, Jing Ma
+
+[**\[Paper\]**](https://arxiv.org/pdf/2602.19323) [**\[Code\]**](https://github.com/yrqiao/DefenseSplat)
+- DefenseSplat filters poisoned input views in the wavelet domain and regularizes Gaussian scale during training, restoring 3DGS fidelity under attack without adversarial training or clean ground truth.
+</div>
+</div>
+
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2025</div><img src='images/aaai2025-poster.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -44,7 +57,9 @@ Certified Causal Defense with Generalizable Robustness
 </div>
 </div>
 
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
+
+
+<!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 
 </div>
 
