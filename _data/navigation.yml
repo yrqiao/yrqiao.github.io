@@ -10,11 +10,11 @@ main:
 
   - title: "News"
     url: "/"
-    scroll: "-news"
+    scroll: "news"
 
   - title: "Publications"
     url: "/"
-    scroll: "-publications"
+    scroll: "selected-publications"
 
   - title: "Experience"
     url: "/experience/"
