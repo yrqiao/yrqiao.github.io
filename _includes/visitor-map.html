@@ -8,10 +8,11 @@
      取代不蒜子：后者官方端点已 404。
 
   2. MapMyVisitors —— 访客地图。
-     需要在 mapmyvisitors.com 注册并绑定本站域名，拿到专属 token，
-     填进 _config.yml 的 mapmyvisitors_id。没填就整块不渲染，
-     不会留下一个坏掉的空框。注意其免费版地图打点有保留期，
-     不是永久 —— 所以累计总数才交给 vercount，没让它兼任。
+     参数存在 _config.yml 的 mapmyvisitors_params，是「? 之后的整段查询串」
+     而不只是 d= 那个 token —— co / ct / cmo / cmn 是在它网站上选的配色，
+     只留 token 会全部丢失。留空则整块不渲染，不会留下一个坏掉的空框。
+     注意其免费版地图打点有保留期，不是永久 —— 所以累计总数才交给 vercount，
+     没让它兼任。
 -->
 <div class="visitor-stats">
   <p class="visitor-stats__counter">
@@ -20,7 +21,7 @@
     Unique visitors <strong id="vercount_value_site_uv">–</strong>
   </p>
 
-  {% if site.mapmyvisitors_id and site.mapmyvisitors_id != "" %}
+  {% if site.mapmyvisitors_params and site.mapmyvisitors_params != "" %}
   <div class="visitor-stats__map" id="mapmyvisitors-mount"></div>
   <script>
     (function () {
@@ -29,7 +30,8 @@
       var s = document.createElement('script');
       s.type = 'text/javascript';
       s.id = 'mapmyvisitors';
-      s.src = 'https://mapmyvisitors.com/map.js?d={{ site.mapmyvisitors_id | uri_escape }}&cl=ffffff&w=a';
+      // jsonify 负责转义，参数串里的引号不会截断这行 JS
+      s.src = 'https://mapmyvisitors.com/map.js?' + {{ site.mapmyvisitors_params | jsonify }};
       mount.appendChild(s);
     })();
   </script>

@@ -16,10 +16,11 @@ google_scholar_stats_use_cdn : true
 # google analytics
 google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
 
-# 访客地图。去 https://mapmyvisitors.com 注册并绑定 https://yrqiao.github.io，
-# 把它给的 map.js 链接里 d= 后面那串 token 填在这里。留空则不渲染地图，
-# 下方的累计访问计数（vercount）不受影响、照常工作。
-mapmyvisitors_id         :
+# 访客地图。这里存 mapmyvisitors.com 给的 map.js 链接里「? 之后的整段查询串」，
+# 不只是 d= 那个 token —— co / ct / cmo / cmn / cl 是你在它网站上挑的配色，
+# w 是宽度，只留 token 的话这些全会丢掉。
+# 留空则整块地图不渲染，下方的累计访问计数（vercount）不受影响、照常工作。
+mapmyvisitors_params     : "cl=ffffff&w=300&t=tt&d=_OeO5D9DgC9fWcg1HIg1aXQ7cwhE4UjbpMXlhERSnho&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353"
 
 # SEO Related
 google_site_verification :  # get google_site_verification from https://search.google.com/search-console/about
