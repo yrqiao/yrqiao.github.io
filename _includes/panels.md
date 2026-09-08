@@ -15,7 +15,7 @@
 
 <span class='anchor' id='about-me'></span>
 
-I am **Yiran Qiao**, a PhD candidate in Computer Science at Case Western Reserve University, advised by [Prof. Jing Ma](https://jma712.github.io/). Prior to that, I received my M.S. from The Ohio State University and my B.S. in Electrical Engineering from Xi'an Jiaotong University.
+I am **Yiran Qiao**, a PhD candidate in Computer Science at Case Western Reserve University, where I am fortunate to be advised by [Prof. Jing Ma](https://jma712.github.io/). Prior to that, I received my M.S. from The Ohio State University and my B.S. in Electrical Engineering from Xi'an Jiaotong University.
 
 My research centers on **diffusion models** and **flow matching**, along with their applications to world models and 3D generation. I am also interested in causal inference and adversarial attacks and defenses.
 
