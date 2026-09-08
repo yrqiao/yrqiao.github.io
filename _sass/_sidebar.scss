@@ -143,6 +143,16 @@
     margin-top: 10px;
     margin-bottom: 20px;
   }
+
+  // 单位校徽，跟在 bio 文字后面。侧边栏只有 2/12 栏宽，
+  // 行内摆放会吊在换行末尾，所以单独占一行。
+  img.bio-logo {
+    display: block;
+    width: 130px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
 }
 
 .author__urls-wrapper {
