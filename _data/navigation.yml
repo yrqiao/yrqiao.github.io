@@ -1,5 +1,7 @@
 # main links links
 main:
+  # 首页内的锚点。必须带前导 / ——
+  # 否则在 /experience/ 这类子页面上点击会在当前页找锚点，跳不回首页。
   - title: "About Me"
     url: "/#about-me"
 
@@ -9,14 +11,9 @@ main:
   - title: "Publications"
     url: "/#-publications"
 
-  - title: "Honors and Awards"
-    url: "/#-honors-and-awards"
+  # 独立页面
+  - title: "Experience"
+    url: "/experience/"
 
-  - title: "Educations"
-    url: "/#-educations"
-
-  - title: "Invited Talks"
-    url: "/#-invited-talks"
-
-  - title: "Internships"
-    url: "/#-internships"
+  - title: "Awards and Service"
+    url: "/awards-and-service/"
