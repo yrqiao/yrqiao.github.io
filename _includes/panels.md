@@ -32,12 +32,12 @@ My research centers on **diffusion models** and **flow matching**, along with th
 
 # 📝 Selected Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/valerant.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='images/valerant.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <span style="font-variant: small-caps;">Valerant</span>: An Automatic Na<u>V</u>ig<u>A</u>b<u>L</u><u>E</u> Game Map Generato<u>R</u> via <u>A</u>ction-Co<u>N</u>ditioned World Model Explora<u>T</u>ion
 
-**Yiran Qiao**
+**Yiran Qiao**, Feng Wang, Jing Ma
 
 [**\[Paper\]**](https://arxiv.org/pdf/2609.09418) [**\[Project Page\]**](https://yrqiao.github.io/VALERANT/)
 - VALERANT builds a navigable 3D game map from a single image by rolling out candidate actions through an action-conditioned world model, reconstructing each rollout with SLAM, and committing the step that scores best.
