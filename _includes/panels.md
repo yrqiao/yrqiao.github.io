@@ -45,14 +45,14 @@ My research centers on **diffusion models** and **flow matching**, along with th
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026.05</div><img src='images/dilast.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='images/dilast.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 Structured 3D Latents Are Surprisingly Powerful: Unleashing Generalizable Style with 2D Diffusion
 
 **Yiran Qiao**, Yiren Lu, Yunlai Zhou, Disheng Liu, Linlin Hou, Rui Yang, Yu Yin, Jing Ma
 
-[**\[Paper\]**](https://arxiv.org/pdf/2605.04412)
+[**\[Paper\]**](https://arxiv.org/pdf/2605.04412) [**\[Project Page\]**](https://yrqiao.github.io/DiLAST/)
 - DiLAST guides a 3D generator's structured latents with a pretrained 2D diffusion teacher, transferring styles well outside the generator's training distribution and plugging into existing backbones unchanged.
 </div>
 </div>
