@@ -53,7 +53,7 @@ Structured 3D Latents Are Surprisingly Powerful: Unleashing Generalizable Style 
 **Yiran Qiao**, Yiren Lu, Yunlai Zhou, Disheng Liu, Linlin Hou, Rui Yang, Yu Yin, Jing Ma
 
 [**\[Paper\]**](https://arxiv.org/pdf/2605.04412) [**\[Project Page\]**](https://yrqiao.github.io/DiLAST/)
-- DiLAST guides a 3D generator's structured latents with a pretrained 2D diffusion teacher, transferring styles well outside the generator's training distribution and plugging into existing backbones unchanged.
+- We introduce **DiLAST**: 2D <u>Di</u>ffusion-based <u>L</u>atent <u>A</u>wakening for 3D <u>S</u>tyle <u>T</u>ransfer. It guides a 3D generator's structured latents with a pretrained 2D diffusion teacher, transferring styles well outside the generator's training distribution and plugging into existing backbones unchanged.
 </div>
 </div>
 
