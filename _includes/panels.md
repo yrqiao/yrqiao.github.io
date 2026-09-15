@@ -58,6 +58,19 @@ Structured 3D Latents Are Surprisingly Powerful: Unleashing Generalizable Style 
 </div>
 
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='images/advsplat.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+AdvSplat: Adversarial Attacks on Feed-Forward Gaussian Splatting Models
+
+**Yiran Qiao**, Yiren Lu, Yunlai Zhou, Rui Yang, Linlin Hou, Yu Yin, Jing Ma
+
+[**\[Paper\]**](https://arxiv.org/pdf/2603.23686) [**\[Project Page\]**](https://yrqiao.github.io/AdvSplat/)
+- AdvSplat gives the first systematic account of adversarial attacks on feed-forward 3DGS, with two query-efficient black-box algorithms that parameterize imperceptible pixel perturbations in the frequency domain and disrupt reconstruction without access to model internals.
+</div>
+</div>
+
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ECCV 2026</div><img src='images/eccv2026-poster.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
