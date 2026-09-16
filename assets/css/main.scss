@@ -115,3 +115,27 @@ h1:before, .anchor:before {
     background-color: #00369f;
     font-size: .8em;
 }
+
+/* ==========================================================================
+   CV 式条目（Internship Experience / Education 等）
+
+   对应 LaTeX 的 \hfill：左边机构或职位，右边地点或日期。
+   用 flex 而不是 float，窄屏上会整行换行，不会出现左右两段文字重叠。
+   ========================================================================== */
+
+.cv-item {
+    margin-top: 1.5em;          /* 条目之间的间隔 */
+}
+
+.cv-line {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0 1em;
+
+    /* 右栏（地点 / 日期）弱化一档，让左边的机构名先被读到 */
+    > span {
+        color: mix(#fff, $text-color, 30%);
+        white-space: nowrap;
+    }
+}

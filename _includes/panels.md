@@ -105,12 +105,25 @@ Certified Causal Defense with Generalizable Robustness
 
 <div id="panel-experience" class="tab-panel"{% if active != "panel-experience" %} hidden{% endif %} markdown="1">
 
-# 💼 Experience
+# 💼 Internship Experience
 
 <!--
-格式参考，删掉本注释后照着写：
-- *2024.05 - 2024.08*, **Research Intern**, Company / Lab, City. Worked on ___.
+每条一个 cv-item。cv-line 是左右两栏（左边机构/职位，右边地点/日期），
+对应 LaTeX 里的 \hfill；窄屏上会换行而不是挤在一起。
 -->
+
+<div class="cv-item">
+  <div class="cv-line"><strong>Xi’an Jiaotong University</strong><span>Xi’an, China</span></div>
+  <div class="cv-line">Research Assistant Intern<span>Aug 2020 – Jun 2021</span></div>
+</div>
+
+Supervisor: Prof. Xiong Wu<br>
+*Topic: Distributed Energy Storage in Smart Grids*
+
+<div class="cv-item">
+  <div class="cv-line"><strong>Emerson Technology Resources (Xi’an) Co., Ltd.</strong><span>Xi’an, China</span></div>
+  <div class="cv-line">Electrical Engineering Intern<span>Jun 2020 – Aug 2020</span></div>
+</div>
 
 # 📖 Education
 
