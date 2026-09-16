@@ -15,7 +15,7 @@
 
 <span class='anchor' id='about-me'></span>
 
-I am **Yiran Qiao**, a PhD candidate in Computer Science at Case Western Reserve University, where I am fortunate to be advised by [Prof. Jing Ma](https://jma712.github.io/). Prior to that, I received my M.S. from The Ohio State University and my B.S. in Electrical Engineering from Xi'an Jiaotong University.
+I am **Yiran Qiao**, a PhD student in Computer Science at Case Western Reserve University, where I am fortunate to be advised by [Prof. Jing Ma](https://jma712.github.io/). Prior to that, I received my M.S. in Electrical and Computer Engineering from The Ohio State University and my B.Eng. in Electrical Engineering from Xi'an Jiaotong University.
 
 My research centers on **diffusion models** and **flow matching**, along with their applications to world models and 3D generation. I am also interested in causal inference and adversarial attacks and defenses.
 
@@ -32,7 +32,7 @@ My research centers on **diffusion models** and **flow matching**, along with th
 
 # 📝 Selected Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='images/valerant.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='/images/valerant.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 <span style="font-variant: small-caps;">Valerant</span>: An Automatic Na<u>V</u>ig<u>A</u>b<u>L</u><u>E</u> Game Map Generato<u>R</u> via <u>A</u>ction-Co<u>N</u>ditioned World Model Explora<u>T</u>ion
@@ -45,7 +45,7 @@ My research centers on **diffusion models** and **flow matching**, along with th
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='images/dilast.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='/images/dilast.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 Structured 3D Latents Are Surprisingly Powerful: Unleashing Generalizable Style with 2D Diffusion
@@ -58,7 +58,7 @@ Structured 3D Latents Are Surprisingly Powerful: Unleashing Generalizable Style 
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='images/advsplat.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='/images/advsplat.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 AdvSplat: Adversarial Attacks on Feed-Forward Gaussian Splatting Models
@@ -71,7 +71,7 @@ AdvSplat: Adversarial Attacks on Feed-Forward Gaussian Splatting Models
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ECCV 2026</div><img src='images/eccv2026-poster.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ECCV 2026</div><img src='/images/eccv2026-poster.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 DefenseSplat: Enhancing the Robustness of 3D Gaussian Splatting via Frequency-Aware Filtering
@@ -84,7 +84,7 @@ DefenseSplat: Enhancing the Robustness of 3D Gaussian Splatting via Frequency-Aw
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2025</div><img src='images/aaai2025-poster.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2025</div><img src='/images/aaai2025-poster.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 Certified Causal Defense with Generalizable Robustness
@@ -114,7 +114,7 @@ Certified Causal Defense with Generalizable Robustness
 
 <div class="cv-item">
   <div class="cv-line"><strong>Xi’an Jiaotong University</strong><span>Xi’an, China</span></div>
-  <div class="cv-line">Research Assistant Intern<span>Aug 2020 – Jun 2021</span></div>
+  <div class="cv-line"><em>Research Assistant Intern</em><span>Aug 2020 – Jun 2021</span></div>
 </div>
 
 Supervisor: Prof. Xiong Wu<br>
@@ -122,14 +122,25 @@ Supervisor: Prof. Xiong Wu<br>
 
 <div class="cv-item">
   <div class="cv-line"><strong>Emerson Technology Resources (Xi’an) Co., Ltd.</strong><span>Xi’an, China</span></div>
-  <div class="cv-line">Electrical Engineering Intern<span>Jun 2020 – Aug 2020</span></div>
+  <div class="cv-line"><em>Electrical Engineering Intern</em><span>Jun 2020 – Aug 2020</span></div>
 </div>
 
 # 📖 Education
 
-- **Case Western Reserve University** — Ph.D. in Computer Science, advised by [Prof. Jing Ma](https://jma712.github.io/)
-- **The Ohio State University** — M.S.
-- **Xi'an Jiaotong University** — B.S. in Electrical Engineering
+<div class="cv-item">
+  <div class="cv-line"><strong>Case Western Reserve University</strong><span>Cleveland, OH, USA</span></div>
+  <div class="cv-line"><em>Ph.D. in Computer Science</em><span>Aug 2023 – Present</span></div>
+</div>
+
+<div class="cv-item">
+  <div class="cv-line"><strong>The Ohio State University</strong><span>Columbus, OH, USA</span></div>
+  <div class="cv-line"><em>M.S. in Electrical and Computer Engineering</em><span>Aug 2021 – May 2023</span></div>
+</div>
+
+<div class="cv-item">
+  <div class="cv-line"><strong>Xi’an Jiaotong University</strong><span>Xi’an, China</span></div>
+  <div class="cv-line"><em>B.Eng. in Electrical Engineering</em><span>Sep 2015 – Jun 2019</span></div>
+</div>
 
 </div>
 
