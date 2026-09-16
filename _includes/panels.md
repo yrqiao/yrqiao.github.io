@@ -149,10 +149,9 @@ Supervisor: Prof. Xiong Wu<br>
 
 # 🎖 Awards
 
-<!--
-格式参考，删掉本注释后照着写：
-- *2025.03*, Award name, Granting body.
--->
+<div class="cv-item">
+  <div class="cv-line"><strong>Outstanding Graduate Teaching Award</strong><span>2025</span></div>
+</div>
 
 # 🤝 Service
 
