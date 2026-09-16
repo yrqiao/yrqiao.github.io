@@ -155,9 +155,6 @@ Supervisor: Prof. Xiong Wu<br>
 
 # 🤝 Service
 
-<!--
-格式参考：
-**Reviewer**: NeurIPS 2025, ICML 2025, CVPR 2025
--->
+**Conference Reviewer**: NeurIPS 2025, ICLR 2026, ICML 2026, CVPR 2026, NeurIPS 2026, ICLR 2027
 
 </div>
