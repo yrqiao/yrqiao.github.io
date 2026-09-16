@@ -157,4 +157,6 @@ Supervisor: Prof. Xiong Wu<br>
 
 **Conference Reviewer**: NeurIPS 2025, ICLR 2026, ICML 2026, CVPR 2026, NeurIPS 2026, ICLR 2027
 
+**Teaching Assistant**: CSDS 452, CSDS 435, CSDS 433
+
 </div>
