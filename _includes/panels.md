@@ -25,9 +25,9 @@ My research centers on **diffusion models** and **flow matching**, along with th
 - *2026.06*: &nbsp;🎉 Our paper _DefenseSplat_ is accepted to **ECCV 2026**!
 - *2026.05*: &nbsp;🎉 Our paper _SAIF_ is accepted to **ECML PKDD 2026**!
 - *2026.04*: &nbsp;🎉 Our paper _YesBut-v2_ is accepted to **TPAMI**!
-- *2025.09*: &nbsp;🎉 Our paper _Segment then Splat_ is accepted to **Neurips 2025**!
+- *2025.09*: &nbsp;🎉 Our paper _Segment then Splat_ is accepted to **NeurIPS 2025**!
 - *2024.12*: &nbsp;🎉 Our paper _GLEAN_ is accepted to **AAAI 2025**!
-- *2024.09*: &nbsp;🎉 Our paper _YesBut_ is accepted to **Neurips 2024 (Oral)**!
+- *2024.09*: &nbsp;🎉 Our paper _YesBut_ is accepted to **NeurIPS 2024 (Oral)**!
 
 
 # 📝 Selected Publications 
@@ -129,7 +129,7 @@ Supervisor: Prof. Xiong Wu<br>
 
 <div class="cv-item">
   <div class="cv-line"><strong>Case Western Reserve University</strong><span>Cleveland, OH, USA</span></div>
-  <div class="cv-line"><em>Ph.D. in Computer Science</em><span>Aug 2023 – Present</span></div>
+  <div class="cv-line"><em>Ph.D. Student in Computer Science</em><span>Aug 2023 – Present</span></div>
 </div>
 
 <div class="cv-item">
@@ -157,6 +157,6 @@ Supervisor: Prof. Xiong Wu<br>
 
 **Conference Reviewer**: NeurIPS 2025, ICLR 2026, ICML 2026, CVPR 2026, NeurIPS 2026, ICLR 2027
 
-**Teaching Assistant**: CSDS 452, CSDS 435, CSDS 433
+**Teaching Assistant**: CSDS 452 Causality and Machine Learning, CSDS 435 Data Mining, CSDS 433 Database Systems
 
 </div>
